@@ -18,16 +18,16 @@ class KPH_Event_Header_Generator {
         add_action('add_meta_boxes', [$this, 'add_generator_meta_box']);
     }
 
-    public function add_plugin_page() {
-        add_submenu_page(
-            'edit.php?post_type=' . $this->adapter->get_post_type(),
-            __('Event Flyer Generator', 'kph-ical-importer') . ' (v' . KPH_ICAL_IMPORTER_VERSION . ')',
-            __('Flyer Generator', 'kph-ical-importer'),
-            'manage_options',
-            'kph-event-header-generator',
-            [$this, 'create_admin_page']
-        );
-    }
+public function add_plugin_page() {
+    add_submenu_page(
+        'kph-importer',              // Parent slug (matches main)
+        __('Bulk create Event Images...', 'kph-importer'),
+        __('Event Image Generator', 'kph-importer'),  // Submenu title
+        'manage_options',
+        'kph-event-header-generator',
+        [$this, 'create_admin_page']
+    );
+}
 
     public function page_init() {
         // Register settings for this page

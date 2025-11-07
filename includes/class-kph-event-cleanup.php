@@ -15,11 +15,11 @@ class KPH_Event_Cleanup {
         add_action('admin_init', [$this, 'page_init']);
     }
 
-    public function add_plugin_page() {
-        add_submenu_page(
-            'edit.php?post_type=' . $this->adapter->get_post_type(),
-            __('Event Filtering / Cleanup', 'kph-ical-importer'),
-            __('Event Filtering', 'kph-ical-importer'),
+public function add_plugin_page() {
+    add_submenu_page(
+    'kph-importer',              // Parent slug (matches main)
+            __('Event Filtering / Cleanup', 'kph-importer'),
+            __('Event Filtering', 'kph-importer'),
             'manage_options',
             'kph-event-cleanup',
             [$this, 'create_admin_page']

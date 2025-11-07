@@ -36,18 +36,16 @@ class KPH_Location_Manager {
         });
     }
 
-    public function add_plugin_page() {
-        // Add as a submenu under "Events"
-        add_submenu_page(
-            'edit.php?post_type=' . $this->adapter->get_post_type(),
-            'Location Manager',
-            'Location Manager',
-            'manage_options',
-            'kph-location-manager',
-            [$this, 'create_admin_page']
-        );
-    }
-
+public function add_plugin_page() {  // Or add_admin_page(), depending on your class
+    add_submenu_page(
+        'kph-importer',              // Parent slug (matches main menu)
+        __('Merge Locations...', 'kph-importer'),
+         __('Merge Locations', 'kph-importer'),  // Submenu title
+        'manage_options',
+        'kph-location-manager',                 // Slug (your existing one)
+        [$this, 'create_admin_page']          // Callback (adjust to yours)
+    );
+}
     public function create_admin_page() {
         ?>
         <div class="wrap">

@@ -14,9 +14,9 @@ class KPH_Organizer_Settings {
         add_action('admin_init', [$this, 'handle_form_submissions']);
     }
 
-    public function add_plugin_page() {
-        add_submenu_page(
-            'edit.php?post_type=' . $this->adapter->get_post_type(),
+public function add_plugin_page() {
+    add_submenu_page(
+    		'kph-ical-importer-admin',              // Parent slug (matches main menu)
             'Organizer Settings',
             'Organizer Settings',
             'manage_options',

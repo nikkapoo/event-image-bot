@@ -15,20 +15,21 @@ class KPH_Admin_Settings {
     }
 
     public function add_plugin_page() {
-        add_options_page(
-            __('Event Image Bot', 'kph-ical-importer'),
-            __('Event Image Bot', 'kph-ical-importer'),
-            'manage_options',
-            'kph-ical-importer-admin',
-            [$this, 'create_admin_page']
-        );
-    }
+       add_menu_page(
+    'Event Image Bot',                          // Page title
+    'Event Image Bot',                          // Menu title (sidebar icon)
+    'manage_options',
+    'kph-importer',                  // Parent slug
+    [$this, 'create_admin_page'],                     // Callback
+    'dashicons-images-alt2',                    // Icon (event-y)
+    60                                          // Sidebar position (after Posts, before Media)
+);}
 
     public function create_admin_page() {
         $options = get_option('kph_importer_options');
         ?>
         <div class="wrap">
-            <h1><?php _e('Event Image Bot Settings', 'kph-ical-importer'); ?> (v1.5.0)</h1>
+            <h1><?php _e('Event Image Bot Settings', 'kph-importer'); ?> (v1.0)</h1>
             
             <?php
             $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'settings';
