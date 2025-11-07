@@ -1,13 +1,26 @@
 <?php
 /**
- * Plugin Name:       Event Image Generator
- * Description:       Imports events from iCal/.ics feeds, cleans titles, generates flyer images, and supports major calendar plugins.
- * Version:           0.4.0
- * Author:            Liibooz
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       kph-ical-importer
+ * Plugin Name: Event Image Bot
+ * Plugin URI: https://github.com/nikkapoo/wpeit
+ * Description: The ultimate automation tool for event websites. Import events from any iCal/.ics feed and automatically generate stunning, branded flyer images for each one.
+ * Version: 2.2.0
+ * Author: liibooz
+ * Author URI: https://github.com/nikkapoo
+ * Contributors: liibooz
+ * Tags: events, import, ical, eventon, the events calendar, modern events calendar, automate, featured image, image generator
+ * Requires at least: 5.5
+ * Tested up to: 6.5
+ * Stable tag: 2.2.0
+ * Requires PHP: 7.4
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: event-image-bot
  */
+
+// Safety check - exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 if (!defined('WPINC')) {
     die;
