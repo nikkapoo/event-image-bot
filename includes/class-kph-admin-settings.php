@@ -16,8 +16,8 @@ class KPH_Admin_Settings {
 
     public function add_plugin_page() {
         add_options_page(
-            __('Flyer & Import Settings', 'kph-ical-importer'),
-            __('Flyer & Import Settings', 'kph-ical-importer'),
+            __('Event Image Bot', 'kph-ical-importer'),
+            __('Event Image Bot', 'kph-ical-importer'),
             'manage_options',
             'kph-ical-importer-admin',
             [$this, 'create_admin_page']
@@ -28,7 +28,7 @@ class KPH_Admin_Settings {
         $options = get_option('kph_importer_options');
         ?>
         <div class="wrap">
-            <h1><?php _e('Event Flyer Generator & Importer Settings', 'kph-ical-importer'); ?> (v1.5.0)</h1>
+            <h1><?php _e('Event Image Bot Settings', 'kph-ical-importer'); ?> (v1.5.0)</h1>
             
             <?php
             $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'settings';
